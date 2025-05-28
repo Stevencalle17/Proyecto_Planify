@@ -111,7 +111,7 @@ Linux/macOS:
 
 Windows:
 ```bash
-    taskkill /PID <PID> /F
+   sudo taskkill /PID <PID> /F
 ```
 
 Linux/macOS:

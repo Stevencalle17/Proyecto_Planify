@@ -33,8 +33,6 @@ public class UserDatasource {
         return userRepository.findById(id).map(existingUser -> {
             existingUser.setName(user.getName());
             existingUser.setEmail(user.getEmail());
-            existingUser.setTeam(user.getTeam());
-            existingUser.setPlan(user.getPlan());
             return userRepository.save(existingUser);
         });
     }

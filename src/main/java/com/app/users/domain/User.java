@@ -18,20 +18,16 @@ public class User {
     private String email;
 
     @Column(nullable = false)
-    private String team;
-
-    @Column(nullable = false)
-    private String plan;
+    private String password;
 
     public User() {
     }
 
-    public User(Long id, String name, String email, String team, String plan) {
+    public User(Long id, String name, String email, String password) {
         this.id = id;
         this.name = name;
         this.email = email;
-        this.team = team;
-        this.plan = plan;
+        this.password = password;
     }
 
     public Long getId() {
@@ -58,19 +54,12 @@ public class User {
         this.email = email;
     }
 
-    public String getTeam() {
-        return team;
+    public String getPassword() {
+        return password;
     }
 
-    public void setTeam(String team) {
-        this.team = team;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getPlan() {
-        return plan;
-    }
-
-    public void setPlan(String plan) {
-        this.plan = plan;
-    }
 }

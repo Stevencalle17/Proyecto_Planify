@@ -5,41 +5,41 @@ import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.app.projects.domain.IProjectService;
-import com.app.projects.domain.Project;
+import com.app.teams.domain.ITeamService;
+import com.app.teams.domain.Team;
 
 @RestController
-@RequestMapping("/projects")
+@RequestMapping("/teams")
 public class TeamController {
-    private final IProjectService projectService;
+    private final ITeamService teamService;
 
-    public TeamController(IProjectService projectService) {
-        this.projectService = projectService;
+    public TeamController(ITeamService teamService) {
+        this.teamService = teamService;
     }
 
     @GetMapping
-    public List<Project> findAll() {
-        return projectService.findAll();
+    public List<Team> findAll() {
+        return teamService.findAll();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Project> findById(@PathVariable Long id) {
-        return ResponseEntity.ok(projectService.findById(id));
+    public ResponseEntity<Team> findById(@PathVariable Long id) {
+        return ResponseEntity.ok(teamService.findById(id));
     }
 
     @PostMapping
-    public ResponseEntity<Project> save(@RequestBody Project project) {
-        return ResponseEntity.ok(projectService.save(project));
+    public ResponseEntity<Team> save(@RequestBody Team team) {
+        return ResponseEntity.ok(teamService.save(team));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Project> update(@RequestBody Project project, @PathVariable Long id) {
-        return ResponseEntity.ok(projectService.update(project, id));
+    public ResponseEntity<Team> update(@RequestBody Team team, @PathVariable Long id) {
+        return ResponseEntity.ok(teamService.update(team, id));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
-        projectService.deleteById(id);
+        teamService.deleteById(id);
         return ResponseEntity.noContent().build();
     }
 }
