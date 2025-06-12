@@ -27,6 +27,12 @@ public class UserController {
         return ResponseEntity.ok(userService.findById(id));
     }
 
+    // Nuevo endpoint para buscar usuarios por planId
+    @GetMapping("/plan/{planId}")
+    public List<User> findByPlanId(@PathVariable Long planId) {
+        return userService.findByPlanId(planId);
+    }
+
     @PostMapping
     public ResponseEntity<User> save(@RequestBody User user) {
         return ResponseEntity.ok(userService.save(user));

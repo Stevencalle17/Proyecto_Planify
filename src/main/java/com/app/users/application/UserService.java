@@ -55,4 +55,9 @@ public class UserService implements IUserService {
         User user = findById(id);
         userRepository.delete(user);
     }
+
+    @Override
+    public List<User> findByPlanId(Long planId) {
+        return userRepository.findByPlanId(planId);
+    }
 }

@@ -13,4 +13,7 @@ public interface IUserService {
     User update(User user, Long id);
 
     void deleteById(Long id);
+
+    // Nuevo método para buscar usuarios por plan_id
+    List<User> findByPlanId(Long planId);
 }

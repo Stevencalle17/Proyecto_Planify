@@ -20,14 +20,18 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+    @Column(name = "plan_id")
+    private Long planId;
+
     public User() {
     }
 
-    public User(Long id, String name, String email, String password) {
+    public User(Long id, String name, String email, String password, Long planId) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
+        this.planId = planId;
     }
 
     public Long getId() {
@@ -62,4 +66,11 @@ public class User {
         this.password = password;
     }
 
+    public Long getPlanId() {
+        return planId;
+    }
+
+    public void setPlanId(Long planId) {
+        this.planId = planId;
+    }
 }

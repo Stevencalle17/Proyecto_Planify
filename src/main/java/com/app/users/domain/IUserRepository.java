@@ -31,4 +31,7 @@ public interface IUserRepository extends JpaRepository<User, Long> {
     Optional<User> findByEmail(String email);
 
     boolean existsByEmail(String email);
+
+    // Método para buscar usuarios por plan_id
+    List<User> findByPlanId(Long planId);
 }
